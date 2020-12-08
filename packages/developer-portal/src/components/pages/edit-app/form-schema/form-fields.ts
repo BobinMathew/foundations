@@ -9,8 +9,10 @@ type Field =
   | 'iconImageUrl'
   | 'homePage'
   | 'description'
-  | 'termsConditions'
-  | 'privacyPolicy'
+  | 'termsAndConditionsUrl'
+  | 'privacyPolicyUrl'
+  | 'pricingUrl'
+  | 'isFree'
   | 'summary'
   | 'screen1ImageUrl'
   | 'screen2ImageUrl'
@@ -73,15 +75,27 @@ export const formFields: Record<Field, FormFieldInfo> = {
     placeHolder:
       'A detailed description for your app listing. Must be between 150 and 1500 characters. Please note: As this field supports HTML, special characters will be included in the character count',
   },
-  termsConditions: {
-    name: 'termsConditions',
+  termsAndConditionsUrl: {
+    name: 'termsAndConditionsUrl',
     label: 'Terms and Conditions',
     placeHolder: 'URL to link to your Terms and Conditions',
+    errorMessage: 'Invalid URL - has to be https://',
   },
-  privacyPolicy: {
-    name: 'privacyPolicy',
+  privacyPolicyUrl: {
+    name: 'privacyPolicyUrl',
     label: 'Privacy Policy',
     placeHolder: 'URL to link to your Privacy Policy',
+    errorMessage: 'Invalid URL - has to be https://',
+  },
+  pricingUrl: {
+    name: 'pricingUrl',
+    label: 'Pricing Info',
+    placeHolder: 'URL to link to your Pricing Info',
+    errorMessage: 'Invalid URL - has to be https://',
+  },
+  isFree: {
+    name: 'isFree',
+    label: 'This application is free',
   },
   authFlow: {
     name: 'authFlow',

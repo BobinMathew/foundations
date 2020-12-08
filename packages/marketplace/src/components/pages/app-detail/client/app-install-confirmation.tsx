@@ -2,9 +2,10 @@ import * as React from 'react'
 import { useHistory } from 'react-router'
 import { History } from 'history'
 import { useDispatch, useSelector } from 'react-redux'
-import { AppDetailModel } from '@reapit/foundations-ts-definitions'
+import { css } from 'linaria'
+import { AppDetailModel, DesktopIntegrationTypeModel } from '@reapit/foundations-ts-definitions'
 import * as appPermissionContentStyles from '../__styles__/app-permission-content'
-import { Button, ModalV2, GridFourCol, GridFourColItem, Content, ModalPropsV2 } from '@reapit/elements'
+import { Button, ModalV2, GridFourCol, GridFourColItem, Content, ModalPropsV2, H5 } from '@reapit/elements'
 import { installApp } from '@/actions/installations'
 import { fetchAppDetail } from '@/actions/apps'
 import { Dispatch } from 'redux'
@@ -16,6 +17,8 @@ import { DESKTOP_REFRESH_URL } from '@/constants/desktop-urls'
 import { canGoBack } from '@/utils/router-helper'
 import { useReapitConnect } from '@reapit/connect-session'
 import { reapitConnectBrowserSession } from '@/core/connect-session'
+import { getDesktopIntegrationTypes } from '../../../../utils/get-desktop-integration-types'
+import { selectDesktopIntegrationTypes } from '../../../../selector/desktop-integration-types'
 
 export type AppInstallConfirmationProps = {
   appDetailData?: AppDetailModel
@@ -80,25 +83,55 @@ export const handleSuccessAlertMessageAfterClose = (
 export type InstallAppSucesfullyModalParams = Pick<ModalPropsV2, 'afterClose' | 'visible'> &
   Pick<AppInstallConfirmationProps, 'appDetailData'> & {
     onSuccessAlertButtonClick: () => void
-    isDesktopMode?: boolean
+    isDesktopMode: Boolean
   }
+
+const btnGroup = css`
+  margin-top: 20px;
+`
 
 export const InstallNonDirectApiAppSucesfullyModal = ({
   afterClose,
   appDetailData,
   onSuccessAlertButtonClick,
   visible,
+  isDesktopMode,
 }: InstallAppSucesfullyModalParams) => {
   const { name } = appDetailData || {}
+
   return (
     <ModalV2 isCentered hasHeader={false} isPadding={false} visible={Boolean(visible)} onClose={afterClose}>
       <CallToAction
         title="Success"
-        buttonText="Back to List"
-        dataTest="installations-success-message"
-        buttonDataTest="installations-success-button"
+        buttonDataTest="installations-success-button-back"
         onButtonClick={onSuccessAlertButtonClick}
         isCenter
+        footerItems={
+          <div className={btnGroup}>
+            <Button
+              dataTest="installations-success-message"
+              variant="primary"
+              type="button"
+              onClick={onSuccessAlertButtonClick as () => void}
+            >
+              Back To List
+            </Button>
+
+            {isDesktopMode ? (
+              <a href={`agencycloud://process/webpage?url=${appDetailData?.launchUri}`}>
+                <Button dataTest="installations-success-message-launch" variant="primary" type="button">
+                  Launch App
+                </Button>
+              </a>
+            ) : (
+              <a href={appDetailData?.launchUri} target="_blank" rel="noopener noreferrer">
+                <Button dataTest="installations-success-message-launch" variant="primary" type="button">
+                  Launch App
+                </Button>
+              </a>
+            )}
+          </div>
+        }
       >
         {name} has been successfully installed
       </CallToAction>
@@ -152,7 +185,13 @@ const AppInstallConfirmation: React.FC<AppInstallConfirmationProps> = ({
   const installationFormState = useSelector(selectInstallAppState)
   const isLoading = installationFormState?.isLoading
 
-  const { name, id = '', scopes = [] } = appDetailData || {}
+  const { name, id = '', scopes = [], isFree, pricingUrl, developer, desktopIntegrationTypeIds } = appDetailData || {}
+
+  const desktopIntegrationTypes = useSelector(selectDesktopIntegrationTypes) as DesktopIntegrationTypeModel[]
+  const userDesktopIntegrationTypes = getDesktopIntegrationTypes(
+    desktopIntegrationTypeIds || [],
+    desktopIntegrationTypes,
+  )
 
   const dispatch = useDispatch()
   const onSuccessAlertButtonClick = React.useCallback(handleSuccessAlertButtonClick(history), [history])
@@ -172,6 +211,16 @@ const AppInstallConfirmation: React.FC<AppInstallConfirmationProps> = ({
         footer={
           <div className="flex">
             <Button
+              dataTest="disagree-btn"
+              disabled={false}
+              className={appPermissionContentStyles.installButton}
+              type="button"
+              variant="secondary"
+              onClick={closeInstallConfirmationModal}
+            >
+              Cancel
+            </Button>
+            <Button
               dataTest="agree-btn"
               loading={isLoading}
               className={appPermissionContentStyles.installButton}
@@ -188,40 +237,87 @@ const AppInstallConfirmation: React.FC<AppInstallConfirmationProps> = ({
             >
               Confirm
             </Button>
-            <Button
-              dataTest="disagree-btn"
-              disabled={false}
-              className={appPermissionContentStyles.installButton}
-              type="button"
-              variant="danger"
-              onClick={closeInstallConfirmationModal}
-            >
-              Cancel
-            </Button>
           </div>
         }
       >
-        <>
-          {scopes.length ? (
-            <Content>
+        <Content>
+          <p>
+            You are about to install ‘{name}’ for <b>all</b> Users and Offices within your Organisation.
+          </p>
+          {userDesktopIntegrationTypes.length ? (
+            <>
+              <H5 className="mb-2">Desktop Integration</H5>
               <p>
-                You are about to install ‘{name}’ for <b>all</b> members of your organisation.
+                This app requires the following Desktop Integration. Some integration types may replace or change
+                certain behaviours within Agency Cloud.
               </p>
-              <p>By installing this app, you are granting the following permissions to your data:</p>
+              <ul className="ml-4">
+                {userDesktopIntegrationTypes.map(integration => (
+                  <li key={integration.name}>{integration?.description ?? ''}</li>
+                ))}
+              </ul>
               <p>
-                <b>Data Permissions</b>
+                For more information regarding Desktop Integration types, please{' '}
+                {connectIsDesktop ? (
+                  <a
+                    href={
+                      'agencycloud://process/webpage?url=https://marketplace-documentation.reapit.cloud/integration-types'
+                    }
+                  >
+                    click here
+                  </a>
+                ) : (
+                  <a
+                    href="https://marketplace-documentation.reapit.cloud/integration-types"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    click here
+                  </a>
+                )}
+                .
               </p>
-              <p>Information about your organisation and the names/email addresses of your users</p>
+            </>
+          ) : null}
+          <H5 className="mb-2">Pricing Information</H5>
+          {isFree ? (
+            <p>{developer} have specified there is no cost for using this App/Integration.</p>
+          ) : pricingUrl ? (
+            <>
+              <p>
+                {developer} have specified that there is a cost for using this App/Integration, please{' '}
+                {connectIsDesktop ? (
+                  <a href={`agencycloud://process/webpage?url=${pricingUrl}`}>click here</a>
+                ) : (
+                  <a href={pricingUrl} target="_blank" rel="noopener noreferrer">
+                    click here
+                  </a>
+                )}{' '}
+                to view their pricing information. You will be billed directly by {developer}.
+              </p>
+              {developer !== 'Reapit Ltd' && (
+                <p>You will not be charged by Reapit Ltd for any costs associated with using this App/Integration.</p>
+              )}
+            </>
+          ) : (
+            <p>
+              There may be a cost associated to using this App/Integration. However, this information has not yet been
+              provided by {developer}. Please contact {developer} directly for information about pricing.
+            </p>
+          )}
+          <>
+            <H5 className="mb-2">Data Permissions</H5>
+            <p>By installing this app, you are granting the following permissions to your data:</p>
+            <p>Information about your organisation and the names/email addresses of your users</p>
+            {scopes.length && (
               <GridFourCol>
                 {scopes.map(scope => (
                   <GridFourColItem key={scope.name}>{scope?.description ?? ''}</GridFourColItem>
                 ))}
               </GridFourCol>
-            </Content>
-          ) : (
-            <p>This action will install the app for ALL platform users.</p>
-          )}
-        </>
+            )}
+          </>
+        </Content>
       </ModalV2>
       <InstallDirectApiAppSucesfullyModal
         visible={shouldRenderDirectApiAppInstallSuccessfullyModal}
@@ -236,6 +332,7 @@ const AppInstallConfirmation: React.FC<AppInstallConfirmationProps> = ({
         afterClose={handleSuccessAlertMessageAfterClose(id, clientId, setIsSuccessAlertVisible, dispatch)}
         appDetailData={appDetailData}
         onSuccessAlertButtonClick={onSuccessAlertButtonClick}
+        isDesktopMode={connectIsDesktop}
       />
     </>
   )

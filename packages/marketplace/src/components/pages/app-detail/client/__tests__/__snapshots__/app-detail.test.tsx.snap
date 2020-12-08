@@ -99,23 +99,23 @@ exports[`AppDetail should match a snapshot 1`] = `
                       >
                         <Unknown
                           className=""
-                          dataTest="agree-btn"
-                          loading={false}
-                          onClick={[Function]}
-                          type="button"
-                          variant="primary"
-                        >
-                          Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
                           dataTest="disagree-btn"
                           disabled={false}
                           onClick={[Function]}
                           type="button"
-                          variant="danger"
+                          variant="secondary"
                         >
                           Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
+                          dataTest="agree-btn"
+                          loading={false}
+                          onClick={[Function]}
+                          type="button"
+                          variant="danger"
+                        >
+                          Confirm
                         </Unknown>
                       </div>
                     }
@@ -139,23 +139,23 @@ exports[`AppDetail should match a snapshot 1`] = `
                         >
                           <Unknown
                             className=""
-                            dataTest="agree-btn"
-                            loading={false}
-                            onClick={[Function]}
-                            type="button"
-                            variant="primary"
-                          >
-                            Confirm
-                          </Unknown>
-                          <Unknown
-                            className=""
                             dataTest="disagree-btn"
                             disabled={false}
                             onClick={[Function]}
                             type="button"
-                            variant="danger"
+                            variant="secondary"
                           >
                             Cancel
+                          </Unknown>
+                          <Unknown
+                            className=""
+                            dataTest="agree-btn"
+                            loading={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="danger"
+                          >
+                            Confirm
                           </Unknown>
                         </div>
                       }
@@ -218,6 +218,16 @@ exports[`AppDetail should match a snapshot 1`] = `
                       >
                         <Unknown
                           className=""
+                          dataTest="disagree-btn"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                          variant="secondary"
+                        >
+                          Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
                           dataTest="agree-btn"
                           loading={false}
                           onClick={[Function]}
@@ -225,16 +235,6 @@ exports[`AppDetail should match a snapshot 1`] = `
                           variant="primary"
                         >
                           Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
-                          dataTest="disagree-btn"
-                          disabled={false}
-                          onClick={[Function]}
-                          type="button"
-                          variant="danger"
-                        >
-                          Cancel
                         </Unknown>
                       </div>
                     }
@@ -258,6 +258,16 @@ exports[`AppDetail should match a snapshot 1`] = `
                         >
                           <Unknown
                             className=""
+                            dataTest="disagree-btn"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="secondary"
+                          >
+                            Cancel
+                          </Unknown>
+                          <Unknown
+                            className=""
                             dataTest="agree-btn"
                             loading={false}
                             onClick={[Function]}
@@ -265,16 +275,6 @@ exports[`AppDetail should match a snapshot 1`] = `
                             variant="primary"
                           >
                             Confirm
-                          </Unknown>
-                          <Unknown
-                            className=""
-                            dataTest="disagree-btn"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
-                            variant="danger"
-                          >
-                            Cancel
                           </Unknown>
                         </div>
                       }
@@ -329,6 +329,7 @@ exports[`AppDetail should match a snapshot 1`] = `
                   <Component
                     afterClose={[Function]}
                     appDetailData={Object {}}
+                    isDesktopMode={false}
                     onSuccessAlertButtonClick={[Function]}
                     visible={false}
                   >
@@ -571,23 +572,23 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                       >
                         <Unknown
                           className=""
-                          dataTest="agree-btn"
-                          loading={false}
-                          onClick={[Function]}
-                          type="button"
-                          variant="primary"
-                        >
-                          Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
                           dataTest="disagree-btn"
                           disabled={false}
                           onClick={[Function]}
                           type="button"
-                          variant="danger"
+                          variant="secondary"
                         >
                           Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
+                          dataTest="agree-btn"
+                          loading={false}
+                          onClick={[Function]}
+                          type="button"
+                          variant="danger"
+                        >
+                          Confirm
                         </Unknown>
                       </div>
                     }
@@ -611,23 +612,23 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                         >
                           <Unknown
                             className=""
-                            dataTest="agree-btn"
-                            loading={false}
-                            onClick={[Function]}
-                            type="button"
-                            variant="primary"
-                          >
-                            Confirm
-                          </Unknown>
-                          <Unknown
-                            className=""
                             dataTest="disagree-btn"
                             disabled={false}
                             onClick={[Function]}
                             type="button"
-                            variant="danger"
+                            variant="secondary"
                           >
                             Cancel
+                          </Unknown>
+                          <Unknown
+                            className=""
+                            dataTest="agree-btn"
+                            loading={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="danger"
+                          >
+                            Confirm
                           </Unknown>
                         </div>
                       }
@@ -690,6 +691,16 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                       >
                         <Unknown
                           className=""
+                          dataTest="disagree-btn"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                          variant="secondary"
+                        >
+                          Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
                           dataTest="agree-btn"
                           loading={false}
                           onClick={[Function]}
@@ -697,16 +708,6 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                           variant="primary"
                         >
                           Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
-                          dataTest="disagree-btn"
-                          disabled={false}
-                          onClick={[Function]}
-                          type="button"
-                          variant="danger"
-                        >
-                          Cancel
                         </Unknown>
                       </div>
                     }
@@ -730,6 +731,16 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                         >
                           <Unknown
                             className=""
+                            dataTest="disagree-btn"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="secondary"
+                          >
+                            Cancel
+                          </Unknown>
+                          <Unknown
+                            className=""
                             dataTest="agree-btn"
                             loading={false}
                             onClick={[Function]}
@@ -737,16 +748,6 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                             variant="primary"
                           >
                             Confirm
-                          </Unknown>
-                          <Unknown
-                            className=""
-                            dataTest="disagree-btn"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
-                            variant="danger"
-                          >
-                            Cancel
                           </Unknown>
                         </div>
                       }
@@ -801,6 +802,7 @@ exports[`AppDetail should render loader when client.appDetail.data is an empty o
                   <Component
                     afterClose={[Function]}
                     appDetailData={Object {}}
+                    isDesktopMode={false}
                     onSuccessAlertButtonClick={[Function]}
                     visible={false}
                   >
@@ -1043,23 +1045,23 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                       >
                         <Unknown
                           className=""
-                          dataTest="agree-btn"
-                          loading={false}
-                          onClick={[Function]}
-                          type="button"
-                          variant="primary"
-                        >
-                          Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
                           dataTest="disagree-btn"
                           disabled={false}
                           onClick={[Function]}
                           type="button"
-                          variant="danger"
+                          variant="secondary"
                         >
                           Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
+                          dataTest="agree-btn"
+                          loading={false}
+                          onClick={[Function]}
+                          type="button"
+                          variant="danger"
+                        >
+                          Confirm
                         </Unknown>
                       </div>
                     }
@@ -1083,23 +1085,23 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                         >
                           <Unknown
                             className=""
-                            dataTest="agree-btn"
-                            loading={false}
-                            onClick={[Function]}
-                            type="button"
-                            variant="primary"
-                          >
-                            Confirm
-                          </Unknown>
-                          <Unknown
-                            className=""
                             dataTest="disagree-btn"
                             disabled={false}
                             onClick={[Function]}
                             type="button"
-                            variant="danger"
+                            variant="secondary"
                           >
                             Cancel
+                          </Unknown>
+                          <Unknown
+                            className=""
+                            dataTest="agree-btn"
+                            loading={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="danger"
+                          >
+                            Confirm
                           </Unknown>
                         </div>
                       }
@@ -1162,6 +1164,16 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                       >
                         <Unknown
                           className=""
+                          dataTest="disagree-btn"
+                          disabled={false}
+                          onClick={[Function]}
+                          type="button"
+                          variant="secondary"
+                        >
+                          Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
                           dataTest="agree-btn"
                           loading={false}
                           onClick={[Function]}
@@ -1169,16 +1181,6 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                           variant="primary"
                         >
                           Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
-                          dataTest="disagree-btn"
-                          disabled={false}
-                          onClick={[Function]}
-                          type="button"
-                          variant="danger"
-                        >
-                          Cancel
                         </Unknown>
                       </div>
                     }
@@ -1202,6 +1204,16 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                         >
                           <Unknown
                             className=""
+                            dataTest="disagree-btn"
+                            disabled={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="secondary"
+                          >
+                            Cancel
+                          </Unknown>
+                          <Unknown
+                            className=""
                             dataTest="agree-btn"
                             loading={false}
                             onClick={[Function]}
@@ -1209,16 +1221,6 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                             variant="primary"
                           >
                             Confirm
-                          </Unknown>
-                          <Unknown
-                            className=""
-                            dataTest="disagree-btn"
-                            disabled={false}
-                            onClick={[Function]}
-                            type="button"
-                            variant="danger"
-                          >
-                            Cancel
                           </Unknown>
                         </div>
                       }
@@ -1273,6 +1275,7 @@ exports[`AppDetail should render loader when isLoadingAppDetail = true 1`] = `
                   <Component
                     afterClose={[Function]}
                     appDetailData={Object {}}
+                    isDesktopMode={false}
                     onSuccessAlertButtonClick={[Function]}
                     visible={false}
                   >

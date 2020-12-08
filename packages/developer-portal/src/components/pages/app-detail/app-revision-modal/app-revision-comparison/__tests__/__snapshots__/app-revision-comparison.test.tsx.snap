@@ -68,6 +68,7 @@ exports[`AdminRevisionModalInner should match a snapshot 1`] = `
               "developer": "Pete's Proptech World Ltd",
               "homePage": "http://myawesomeproptechproduct.io",
               "id": "9b6fd5f7-2c15-483d-b925-01b650538e52",
+              "isFree": true,
               "media": Array [
                 Object {
                   "description": "Application Icon",
@@ -86,6 +87,8 @@ exports[`AdminRevisionModalInner should match a snapshot 1`] = `
                 },
               ],
               "name": "Peter's Properties",
+              "pricingUrl": "https://reapit.com",
+              "privacyPolicyUrl": "https://reapit.com",
               "scopes": Array [
                 Object {
                   "description": "Read data about developers",
@@ -99,6 +102,7 @@ exports[`AdminRevisionModalInner should match a snapshot 1`] = `
               "summary": "vitae elementum curabitur vitae",
               "supportEmail": "support@reapit.com",
               "telephone": "0113 288 2900",
+              "termsAndConditionsUrl": "https://reapit.com",
             },
             "errorMessage": "",
             "isLoading": false,
@@ -734,6 +738,84 @@ Get
           </div>
           <div
             className="mb-3"
+            key="privacyPolicyUrl"
+          >
+            <h4
+              className="mb-2"
+            >
+              Privacy Policy
+            </h4>
+            <DiffViewer
+              changedString=""
+              currentString="https://reapit.com"
+              type="words"
+            >
+              <div
+                className=""
+              >
+                <span
+                  className=""
+                  key="0"
+                >
+                  https://reapit.com
+                </span>
+              </div>
+            </DiffViewer>
+          </div>
+          <div
+            className="mb-3"
+            key="termsAndConditionsUrl"
+          >
+            <h4
+              className="mb-2"
+            >
+              Terms & Conditions
+            </h4>
+            <DiffViewer
+              changedString=""
+              currentString="https://reapit.com"
+              type="words"
+            >
+              <div
+                className=""
+              >
+                <span
+                  className=""
+                  key="0"
+                >
+                  https://reapit.com
+                </span>
+              </div>
+            </DiffViewer>
+          </div>
+          <div
+            className="mb-3"
+            key="pricingUrl"
+          >
+            <h4
+              className="mb-2"
+            >
+              Pricing Info
+            </h4>
+            <DiffViewer
+              changedString=""
+              currentString="https://reapit.com"
+              type="words"
+            >
+              <div
+                className=""
+              >
+                <span
+                  className=""
+                  key="0"
+                >
+                  https://reapit.com
+                </span>
+              </div>
+            </DiffViewer>
+          </div>
+          <div
+            className="mb-3"
           >
             <h4
               className="mb-2"
@@ -756,6 +838,52 @@ Get
                   <input
                     checked={false}
                     data-test="current"
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                </span>
+              </div>
+            </DiffCheckbox>
+          </div>
+          <div
+            className="mb-3"
+          >
+            <h4
+              className="mb-2"
+              data-test="chkIsFree"
+            >
+              Is Free
+            </h4>
+            <DiffCheckbox
+              changedChecked={false}
+              currentChecked={true}
+              dataTest="revision-diff-isFree"
+            >
+              <div
+                className=""
+                data-test="revision-diff-isFree"
+              >
+                <span
+                  className=" "
+                >
+                  <input
+                    checked={true}
+                    data-test="current"
+                    readOnly={true}
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  className=""
+                >
+                  →
+                </span>
+                <span
+                  className=" "
+                >
+                  <input
+                    checked={false}
+                    data-test="changed"
                     readOnly={true}
                     type="checkbox"
                   />

@@ -30,12 +30,15 @@ const {
   launchUri,
   summary,
   description,
-  termsConditions,
-  privacyPolicy,
+  termsAndConditionsUrl,
+  privacyPolicyUrl,
+  pricingUrl,
+  isFree,
 } = formFields
 
 export type GeneralInformationSectionProps = {
   isListed: boolean
+  isFreeVal: boolean
 }
 
 export const prepareCategoryOptions = (categories: CategoryModel[]) => {
@@ -45,11 +48,10 @@ export const prepareCategoryOptions = (categories: CategoryModel[]) => {
   }))
 }
 
-const GeneralInformationSection: React.FC<GeneralInformationSectionProps> = ({ isListed }) => {
+const GeneralInformationSection: React.FC<GeneralInformationSectionProps> = ({ isListed, isFreeVal }) => {
   const categories = useSelector(selectCategories)
 
   const categoryOptions: SelectBoxOptions[] = prepareCategoryOptions(categories)
-  const isProd = window.reapit.config.appEnv === 'production'
 
   return (
     <FormSection data-test="submit-app-form">
@@ -189,32 +191,48 @@ const GeneralInformationSection: React.FC<GeneralInformationSectionProps> = ({ i
           />
         </GridItem>
       </Grid>
-      {!isProd && (
-        <Grid>
-          <GridItem>
-            <Input
-              dataTest="submit-app-terms-conditions"
-              type="text"
-              labelText={termsConditions.label as string}
-              id={termsConditions.name}
-              name={termsConditions.name}
-              placeholder={termsConditions.placeHolder}
-              required={isListed}
-            />
-          </GridItem>
-          <GridItem>
-            <Input
-              dataTest="submit-app-privacy-policy"
-              type="text"
-              labelText={privacyPolicy.label as string}
-              id={privacyPolicy.name}
-              name={privacyPolicy.name}
-              placeholder={privacyPolicy.placeHolder}
-              required={isListed}
-            />
-          </GridItem>
-        </Grid>
-      )}
+      <Grid>
+        <GridItem>
+          <Input
+            dataTest="submit-app-terms-conditions"
+            type="text"
+            labelText={termsAndConditionsUrl.label as string}
+            id={termsAndConditionsUrl.name}
+            name={termsAndConditionsUrl.name}
+            placeholder={termsAndConditionsUrl.placeHolder}
+            required={isListed}
+          />
+        </GridItem>
+        <GridItem>
+          <Input
+            dataTest="submit-app-privacy-policy"
+            type="text"
+            labelText={privacyPolicyUrl.label as string}
+            id={privacyPolicyUrl.name}
+            name={privacyPolicyUrl.name}
+            placeholder={privacyPolicyUrl.placeHolder}
+            required={isListed}
+          />
+        </GridItem>
+      </Grid>
+      <Grid>
+        <GridItem>
+          <Input
+            dataTest="submit-app-terms-conditions"
+            type="text"
+            labelText={pricingUrl.label as string}
+            id={pricingUrl.name}
+            name={pricingUrl.name}
+            placeholder={pricingUrl.placeHolder}
+            disabled={isFreeVal}
+          />
+        </GridItem>
+
+        <GridItem>
+          <label className={'label inline-block'}>&nbsp;</label>
+          <Checkbox name={isFree.name} id="isFree" labelText="This application is free" />
+        </GridItem>
+      </Grid>
     </FormSection>
   )
 }

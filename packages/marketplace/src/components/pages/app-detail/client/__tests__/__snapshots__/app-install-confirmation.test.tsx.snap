@@ -107,6 +107,16 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
             >
               <Unknown
                 className=""
+                dataTest="disagree-btn"
+                disabled={false}
+                onClick={[MockFunction]}
+                type="button"
+                variant="secondary"
+              >
+                Cancel
+              </Unknown>
+              <Unknown
+                className=""
                 dataTest="agree-btn"
                 loading={false}
                 onClick={[Function]}
@@ -114,16 +124,6 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                 variant="primary"
               >
                 Confirm
-              </Unknown>
-              <Unknown
-                className=""
-                dataTest="disagree-btn"
-                disabled={false}
-                onClick={[MockFunction]}
-                type="button"
-                variant="danger"
-              >
-                Cancel
               </Unknown>
             </div>
           }
@@ -147,6 +147,16 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
               >
                 <Unknown
                   className=""
+                  dataTest="disagree-btn"
+                  disabled={false}
+                  onClick={[MockFunction]}
+                  type="button"
+                  variant="secondary"
+                >
+                  Cancel
+                </Unknown>
+                <Unknown
+                  className=""
                   dataTest="agree-btn"
                   loading={false}
                   onClick={[Function]}
@@ -154,16 +164,6 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                   variant="primary"
                 >
                   Confirm
-                </Unknown>
-                <Unknown
-                  className=""
-                  dataTest="disagree-btn"
-                  disabled={false}
-                  onClick={[MockFunction]}
-                  type="button"
-                  variant="danger"
-                >
-                  Cancel
                 </Unknown>
               </div>
             }
@@ -247,15 +247,29 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                                     <b>
                                       all
                                     </b>
-                                     members of your organisation.
+                                     Users and Offices within your Organisation.
                                   </p>
+                                  <h5
+                                    class=""
+                                    id=""
+                                  >
+                                    Pricing Information
+                                  </h5>
+                                  <p>
+                                    There may be a cost associated to using this App/Integration. However, this information has not yet been provided by 
+                                    Pete's Proptech World Ltd
+                                    . Please contact 
+                                    Pete's Proptech World Ltd
+                                     directly for information about pricing.
+                                  </p>
+                                  <h5
+                                    class=""
+                                    id=""
+                                  >
+                                    Data Permissions
+                                  </h5>
                                   <p>
                                     By installing this app, you are granting the following permissions to your data:
-                                  </p>
-                                  <p>
-                                    <b>
-                                      Data Permissions
-                                    </b>
                                   </p>
                                   <p>
                                     Information about your organisation and the names/email addresses of your users
@@ -286,18 +300,18 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                                   class="flex"
                                 >
                                   <button
+                                    class="button  is-secondary  "
+                                    data-test="disagree-btn"
+                                    type="button"
+                                  >
+                                    Cancel
+                                  </button>
+                                  <button
                                     class="button  is-primary  "
                                     data-test="agree-btn"
                                     type="button"
                                   >
                                     Confirm
-                                  </button>
-                                  <button
-                                    class="button  is-danger  "
-                                    data-test="disagree-btn"
-                                    type="button"
-                                  >
-                                    Cancel
                                   </button>
                                 </div>
                               </div>
@@ -330,6 +344,16 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                       >
                         <Unknown
                           className=""
+                          dataTest="disagree-btn"
+                          disabled={false}
+                          onClick={[MockFunction]}
+                          type="button"
+                          variant="secondary"
+                        >
+                          Cancel
+                        </Unknown>
+                        <Unknown
+                          className=""
                           dataTest="agree-btn"
                           loading={false}
                           onClick={[Function]}
@@ -337,16 +361,6 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                           variant="primary"
                         >
                           Confirm
-                        </Unknown>
-                        <Unknown
-                          className=""
-                          dataTest="disagree-btn"
-                          disabled={false}
-                          onClick={[MockFunction]}
-                          type="button"
-                          variant="danger"
-                        >
-                          Cancel
                         </Unknown>
                       </div>
                     }
@@ -487,15 +501,37 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                                           <b>
                                             all
                                           </b>
-                                           members of your organisation.
+                                           Users and Offices within your Organisation.
                                         </p>
+                                        <Component
+                                          className="mb-2"
+                                        >
+                                          <h5
+                                            className=""
+                                            id=""
+                                          >
+                                            Pricing Information
+                                          </h5>
+                                        </Component>
+                                        <p>
+                                          There may be a cost associated to using this App/Integration. However, this information has not yet been provided by 
+                                          Pete's Proptech World Ltd
+                                          . Please contact 
+                                          Pete's Proptech World Ltd
+                                           directly for information about pricing.
+                                        </p>
+                                        <Component
+                                          className="mb-2"
+                                        >
+                                          <h5
+                                            className=""
+                                            id=""
+                                          >
+                                            Data Permissions
+                                          </h5>
+                                        </Component>
                                         <p>
                                           By installing this app, you are granting the following permissions to your data:
-                                        </p>
-                                        <p>
-                                          <b>
-                                            Data Permissions
-                                          </b>
                                         </p>
                                         <p>
                                           Information about your organisation and the names/email addresses of your users
@@ -538,6 +574,24 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                                     >
                                       <Component
                                         className=""
+                                        dataTest="disagree-btn"
+                                        disabled={false}
+                                        onClick={[MockFunction]}
+                                        type="button"
+                                        variant="secondary"
+                                      >
+                                        <button
+                                          className="button  is-secondary  "
+                                          data-test="disagree-btn"
+                                          disabled={false}
+                                          onClick={[MockFunction]}
+                                          type="button"
+                                        >
+                                          Cancel
+                                        </button>
+                                      </Component>
+                                      <Component
+                                        className=""
                                         dataTest="agree-btn"
                                         loading={false}
                                         onClick={[Function]}
@@ -552,24 +606,6 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
                                           type="button"
                                         >
                                           Confirm
-                                        </button>
-                                      </Component>
-                                      <Component
-                                        className=""
-                                        dataTest="disagree-btn"
-                                        disabled={false}
-                                        onClick={[MockFunction]}
-                                        type="button"
-                                        variant="danger"
-                                      >
-                                        <button
-                                          className="button  is-danger  "
-                                          data-test="disagree-btn"
-                                          disabled={false}
-                                          onClick={[MockFunction]}
-                                          type="button"
-                                        >
-                                          Cancel
                                         </button>
                                       </Component>
                                     </div>
@@ -716,6 +752,7 @@ exports[`ClientAppInstallConfirmation should match a snapshot 1`] = `
               "telephone": "0113 288 2900",
             }
           }
+          isDesktopMode={false}
           onSuccessAlertButtonClick={[Function]}
           visible={false}
         >
@@ -796,6 +833,7 @@ exports[`InstallDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
       "telephone": "0113 288 2900",
     }
   }
+  isDesktopMode={true}
   onSuccessAlertButtonClick={[MockFunction]}
   visible={true}
 >
@@ -904,7 +942,9 @@ exports[`InstallDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
                                 >
                                   To launch, please use
                                    
-                                  <a />
+                                  <a
+                                    href="agencycloud://process/webpage?url=undefined"
+                                  />
                                 </p>
                                 <p>
                                   If there are any additional setup requirements, a member of 
@@ -1113,7 +1153,9 @@ exports[`InstallDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
                                         >
                                           To launch, please use
                                            
-                                          <a />
+                                          <a
+                                            href="agencycloud://process/webpage?url=undefined"
+                                          />
                                         </p>
                                         <p>
                                           If there are any additional setup requirements, a member of 
@@ -1218,6 +1260,7 @@ exports[`InstallNonDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
       "telephone": "0113 288 2900",
     }
   }
+  isDesktopMode={true}
   onSuccessAlertButtonClick={[MockFunction]}
   visible={true}
 >
@@ -1302,7 +1345,7 @@ exports[`InstallNonDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
                         >
                           <div
                             class=""
-                            data-test="installations-success-message"
+                            data-test=""
                           >
                             <div
                               class="notification is-success mb-0"
@@ -1321,13 +1364,28 @@ exports[`InstallNonDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
                               <div
                                 class="has-text-right"
                               >
-                                <button
-                                  class="button  is-primary  "
-                                  data-test="installations-success-button"
-                                  type="button"
+                                <div
+                                  class=""
                                 >
-                                  Back to List
-                                </button>
+                                  <button
+                                    class="button  is-primary  "
+                                    data-test="installations-success-message"
+                                    type="button"
+                                  >
+                                    Back To List
+                                  </button>
+                                  <a
+                                    href="agencycloud://process/webpage?url=undefined"
+                                  >
+                                    <button
+                                      class="button  is-primary  "
+                                      data-test="installations-success-message-launch"
+                                      type="button"
+                                    >
+                                      Launch App
+                                    </button>
+                                  </a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -1475,16 +1533,39 @@ exports[`InstallNonDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
                               className="rc-dialog-body"
                             >
                               <CallToAction
-                                buttonDataTest="installations-success-button"
-                                buttonText="Back to List"
-                                dataTest="installations-success-message"
+                                buttonDataTest="installations-success-button-back"
+                                footerItems={
+                                  <div
+                                    className=""
+                                  >
+                                    <Unknown
+                                      dataTest="installations-success-message"
+                                      onClick={[MockFunction]}
+                                      type="button"
+                                      variant="primary"
+                                    >
+                                      Back To List
+                                    </Unknown>
+                                    <a
+                                      href="agencycloud://process/webpage?url=undefined"
+                                    >
+                                      <Unknown
+                                        dataTest="installations-success-message-launch"
+                                        type="button"
+                                        variant="primary"
+                                      >
+                                        Launch App
+                                      </Unknown>
+                                    </a>
+                                  </div>
+                                }
                                 isCenter={true}
                                 onButtonClick={[MockFunction]}
                                 title="Success"
                               >
                                 <div
                                   className=""
-                                  data-test="installations-success-message"
+                                  data-test=""
                                 >
                                   <Component
                                     className="mb-0"
@@ -1514,22 +1595,44 @@ exports[`InstallNonDirectApiAppSucesfullyModal  should match a snapshot 1`] = `
                                       <div
                                         className="has-text-right"
                                       >
-                                        <Component
-                                          dataTest="installations-success-button"
-                                          onClick={[MockFunction]}
-                                          type="button"
-                                          variant="primary"
+                                        <div
+                                          className=""
                                         >
-                                          <button
-                                            className="button  is-primary  "
-                                            data-test="installations-success-button"
-                                            disabled={false}
+                                          <Component
+                                            dataTest="installations-success-message"
                                             onClick={[MockFunction]}
                                             type="button"
+                                            variant="primary"
                                           >
-                                            Back to List
-                                          </button>
-                                        </Component>
+                                            <button
+                                              className="button  is-primary  "
+                                              data-test="installations-success-message"
+                                              disabled={false}
+                                              onClick={[MockFunction]}
+                                              type="button"
+                                            >
+                                              Back To List
+                                            </button>
+                                          </Component>
+                                          <a
+                                            href="agencycloud://process/webpage?url=undefined"
+                                          >
+                                            <Component
+                                              dataTest="installations-success-message-launch"
+                                              type="button"
+                                              variant="primary"
+                                            >
+                                              <button
+                                                className="button  is-primary  "
+                                                data-test="installations-success-message-launch"
+                                                disabled={false}
+                                                type="button"
+                                              >
+                                                Launch App
+                                              </button>
+                                            </Component>
+                                          </a>
+                                        </div>
                                       </div>
                                     </div>
                                   </Component>

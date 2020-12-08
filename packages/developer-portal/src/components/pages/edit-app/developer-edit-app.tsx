@@ -41,6 +41,7 @@ export type CustomCreateRevisionModal = CreateAppRevisionModel & {
   redirectUris?: string
   signoutUris?: string
   authFlow?: string
+  isFree: false
 }
 
 export const labelTextOfField = {
@@ -58,6 +59,9 @@ export const labelTextOfField = {
   scopes: 'Permissions',
   authFlow: 'Authentication flow',
   limitToClientIds: 'Private Apps',
+  privacyPolicyUrl: 'Privacy Policy',
+  termsAndConditionsUrl: 'Terms & Conditions',
+  pricingUrl: 'Pricing Info',
 }
 
 export const renderErrors = (errors: Record<string, string | string[]>) => {
@@ -117,6 +121,10 @@ export const generateInitialValues = (appDetail: AppDetailModel | null, develope
       isListed,
       isDirectApi,
       scopes: appScopes,
+      isFree,
+      privacyPolicyUrl,
+      pricingUrl,
+      termsAndConditionsUrl,
       redirectUris = [],
       signoutUris = [],
       limitToClientIds = [],
@@ -145,6 +153,10 @@ export const generateInitialValues = (appDetail: AppDetailModel | null, develope
       iconImageUrl,
       isListed,
       isDirectApi,
+      isFree,
+      privacyPolicyUrl,
+      pricingUrl,
+      termsAndConditionsUrl,
       scopes: appScopes ? appScopes.map(item => item.name) : [],
       redirectUris: redirectUris.join(','),
       signoutUris: signoutUris.join(','),
@@ -176,6 +188,10 @@ export const generateInitialValues = (appDetail: AppDetailModel | null, develope
       signoutUris: '',
       limitToClientIds: '',
       desktopIntegrationTypeIds: '',
+      isFree: false,
+      privacyPolicyUrl: '',
+      pricingUrl: '',
+      termsAndConditionsUrl: '',
     }
   }
 
@@ -450,7 +466,7 @@ export const DeveloperEditApp: React.FC<DeveloperSubmitAppProps> = () => {
           const isListed = values.isListed
           return (
             <Form noValidate={true}>
-              <GeneralInformationSection isListed={!!isListed} />
+              <GeneralInformationSection isListed={!!isListed} isFreeVal={values.isFree} />
               <AgencyCloudIntegrationSection />
               {/* Section not required right now - eventually we will remove but
                testing with users first to see if it causes confusion */}

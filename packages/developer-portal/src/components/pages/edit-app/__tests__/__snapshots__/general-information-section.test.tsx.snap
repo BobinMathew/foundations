@@ -24,6 +24,7 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
         onSubmit={[Function]}
       >
         <GeneralInformationSection
+          isFreeVal={false}
           isListed={false}
         >
           <Component
@@ -567,15 +568,15 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                     >
                       <Component
                         dataTest="submit-app-terms-conditions"
-                        id="termsConditions"
+                        id="termsAndConditionsUrl"
                         labelText="Terms and Conditions"
-                        name="termsConditions"
+                        name="termsAndConditionsUrl"
                         placeholder="URL to link to your Terms and Conditions"
                         required={false}
                         type="text"
                       >
                         <Field
-                          name="termsConditions"
+                          name="termsAndConditionsUrl"
                           validate={null}
                         >
                           <div
@@ -586,7 +587,7 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                             >
                               <label
                                 className="label inline-block "
-                                htmlFor="termsConditions"
+                                htmlFor="termsAndConditionsUrl"
                               >
                                 Terms and Conditions
                               </label>
@@ -594,8 +595,8 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                                 className=""
                                 data-test="submit-app-terms-conditions"
                                 disabled={false}
-                                id="termsConditions"
-                                name="termsConditions"
+                                id="termsAndConditionsUrl"
+                                name="termsAndConditionsUrl"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 placeholder="URL to link to your Terms and Conditions"
@@ -615,15 +616,15 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                     >
                       <Component
                         dataTest="submit-app-privacy-policy"
-                        id="privacyPolicy"
+                        id="privacyPolicyUrl"
                         labelText="Privacy Policy"
-                        name="privacyPolicy"
+                        name="privacyPolicyUrl"
                         placeholder="URL to link to your Privacy Policy"
                         required={false}
                         type="text"
                       >
                         <Field
-                          name="privacyPolicy"
+                          name="privacyPolicyUrl"
                           validate={null}
                         >
                           <div
@@ -634,7 +635,7 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                             >
                               <label
                                 className="label inline-block "
-                                htmlFor="privacyPolicy"
+                                htmlFor="privacyPolicyUrl"
                               >
                                 Privacy Policy
                               </label>
@@ -642,8 +643,8 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                                 className=""
                                 data-test="submit-app-privacy-policy"
                                 disabled={false}
-                                id="privacyPolicy"
-                                name="privacyPolicy"
+                                id="privacyPolicyUrl"
+                                name="privacyPolicyUrl"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 placeholder="URL to link to your Privacy Policy"
@@ -653,6 +654,111 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                             </div>
                           </div>
                         </Field>
+                      </Component>
+                    </div>
+                  </Component>
+                </div>
+              </Component>
+              <Component>
+                <div
+                  className=""
+                  data-test=""
+                >
+                  <Component>
+                    <div
+                      className=""
+                      data-test=""
+                    >
+                      <Component
+                        dataTest="submit-app-terms-conditions"
+                        disabled={false}
+                        id="pricingUrl"
+                        labelText="Pricing Info"
+                        name="pricingUrl"
+                        placeholder="URL to link to your Pricing Info"
+                        type="text"
+                      >
+                        <Field
+                          name="pricingUrl"
+                          validate={null}
+                        >
+                          <div
+                            className=""
+                          >
+                            <div
+                              className="control "
+                            >
+                              <label
+                                className="label inline-block "
+                                htmlFor="pricingUrl"
+                              >
+                                Pricing Info
+                              </label>
+                              <input
+                                className=""
+                                data-test="submit-app-terms-conditions"
+                                disabled={false}
+                                id="pricingUrl"
+                                name="pricingUrl"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                placeholder="URL to link to your Pricing Info"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </Field>
+                      </Component>
+                    </div>
+                  </Component>
+                  <Component>
+                    <div
+                      className=""
+                      data-test=""
+                    >
+                      <label
+                        className="label inline-block"
+                      >
+                         
+                      </label>
+                      <Component
+                        id="isFree"
+                        labelText="This application is free"
+                        name="isFree"
+                      >
+                        <div
+                          className="field "
+                        >
+                          <div
+                            className="control"
+                          >
+                            <Field
+                              name="isFree"
+                              type="checkbox"
+                            >
+                              <div
+                                className="field field-checkbox"
+                              >
+                                <input
+                                  checked={false}
+                                  className="checkbox"
+                                  data-test=""
+                                  id="isFree"
+                                  onChange={[Function]}
+                                  type="checkbox"
+                                  value=""
+                                />
+                                <label
+                                  className="label"
+                                  htmlFor="isFree"
+                                >
+                                  This application is free
+                                </label>
+                              </div>
+                            </Field>
+                          </div>
+                        </div>
                       </Component>
                     </div>
                   </Component>
@@ -691,6 +797,7 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
         onSubmit={[Function]}
       >
         <GeneralInformationSection
+          isFreeVal={false}
           isListed={true}
         >
           <Component
@@ -1233,15 +1340,15 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                     >
                       <Component
                         dataTest="submit-app-terms-conditions"
-                        id="termsConditions"
+                        id="termsAndConditionsUrl"
                         labelText="Terms and Conditions"
-                        name="termsConditions"
+                        name="termsAndConditionsUrl"
                         placeholder="URL to link to your Terms and Conditions"
                         required={true}
                         type="text"
                       >
                         <Field
-                          name="termsConditions"
+                          name="termsAndConditionsUrl"
                           validate={[Function]}
                         >
                           <div
@@ -1252,7 +1359,7 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                             >
                               <label
                                 className="label inline-block required-label"
-                                htmlFor="termsConditions"
+                                htmlFor="termsAndConditionsUrl"
                               >
                                 Terms and Conditions
                               </label>
@@ -1260,8 +1367,8 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                                 className=""
                                 data-test="submit-app-terms-conditions"
                                 disabled={false}
-                                id="termsConditions"
-                                name="termsConditions"
+                                id="termsAndConditionsUrl"
+                                name="termsAndConditionsUrl"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 placeholder="URL to link to your Terms and Conditions"
@@ -1281,15 +1388,15 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                     >
                       <Component
                         dataTest="submit-app-privacy-policy"
-                        id="privacyPolicy"
+                        id="privacyPolicyUrl"
                         labelText="Privacy Policy"
-                        name="privacyPolicy"
+                        name="privacyPolicyUrl"
                         placeholder="URL to link to your Privacy Policy"
                         required={true}
                         type="text"
                       >
                         <Field
-                          name="privacyPolicy"
+                          name="privacyPolicyUrl"
                           validate={[Function]}
                         >
                           <div
@@ -1300,7 +1407,7 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                             >
                               <label
                                 className="label inline-block required-label"
-                                htmlFor="privacyPolicy"
+                                htmlFor="privacyPolicyUrl"
                               >
                                 Privacy Policy
                               </label>
@@ -1308,8 +1415,8 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                                 className=""
                                 data-test="submit-app-privacy-policy"
                                 disabled={false}
-                                id="privacyPolicy"
-                                name="privacyPolicy"
+                                id="privacyPolicyUrl"
+                                name="privacyPolicyUrl"
                                 onBlur={[Function]}
                                 onChange={[Function]}
                                 placeholder="URL to link to your Privacy Policy"
@@ -1319,6 +1426,111 @@ exports[`GeneralInformationSection should match a snapshot when isListed equal t
                             </div>
                           </div>
                         </Field>
+                      </Component>
+                    </div>
+                  </Component>
+                </div>
+              </Component>
+              <Component>
+                <div
+                  className=""
+                  data-test=""
+                >
+                  <Component>
+                    <div
+                      className=""
+                      data-test=""
+                    >
+                      <Component
+                        dataTest="submit-app-terms-conditions"
+                        disabled={false}
+                        id="pricingUrl"
+                        labelText="Pricing Info"
+                        name="pricingUrl"
+                        placeholder="URL to link to your Pricing Info"
+                        type="text"
+                      >
+                        <Field
+                          name="pricingUrl"
+                          validate={null}
+                        >
+                          <div
+                            className=""
+                          >
+                            <div
+                              className="control "
+                            >
+                              <label
+                                className="label inline-block "
+                                htmlFor="pricingUrl"
+                              >
+                                Pricing Info
+                              </label>
+                              <input
+                                className=""
+                                data-test="submit-app-terms-conditions"
+                                disabled={false}
+                                id="pricingUrl"
+                                name="pricingUrl"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                placeholder="URL to link to your Pricing Info"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </Field>
+                      </Component>
+                    </div>
+                  </Component>
+                  <Component>
+                    <div
+                      className=""
+                      data-test=""
+                    >
+                      <label
+                        className="label inline-block"
+                      >
+                         
+                      </label>
+                      <Component
+                        id="isFree"
+                        labelText="This application is free"
+                        name="isFree"
+                      >
+                        <div
+                          className="field "
+                        >
+                          <div
+                            className="control"
+                          >
+                            <Field
+                              name="isFree"
+                              type="checkbox"
+                            >
+                              <div
+                                className="field field-checkbox"
+                              >
+                                <input
+                                  checked={false}
+                                  className="checkbox"
+                                  data-test=""
+                                  id="isFree"
+                                  onChange={[Function]}
+                                  type="checkbox"
+                                  value=""
+                                />
+                                <label
+                                  className="label"
+                                  htmlFor="isFree"
+                                >
+                                  This application is free
+                                </label>
+                              </div>
+                            </Field>
+                          </div>
+                        </div>
                       </Component>
                     </div>
                   </Component>
